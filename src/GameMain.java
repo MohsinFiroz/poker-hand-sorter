@@ -13,8 +13,7 @@ public class GameMain {
 		int playerTwo = 0;
 
 		try {
-			br = new BufferedReader(new FileReader("src/poker-hands.txt"));
-			// br = new BufferedReader(new InputStreamReader(System.in));
+			br = new BufferedReader(new InputStreamReader(System.in));
 			while (true) {
 				String input = br.readLine();
 				if (input == null) {
