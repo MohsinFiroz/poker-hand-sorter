@@ -86,11 +86,12 @@ public class Hand {
 			this.combination = HandCombination.PAIR;
 			return;
 		}
-
+		// High card: Highest value card
 		this.handRank = this.getCard(4).getRank();
 		this.combination = HandCombination.HIGH_CARD;
 	}
 
+	// Pair: Two cards of same value
 	private boolean isPair() {
 		int last = this.cards[4].getRank();
 		int total = 0, numberOfCards = 1;
@@ -114,6 +115,7 @@ public class Hand {
 		return false;
 	}
 
+	// Two pairs: Two different pairs
 	private boolean isTwoPairs() {
 		int last = this.cards[4].getRank();
 		int i = 3, total = 0, numberOfCards = 1;
@@ -161,6 +163,7 @@ public class Hand {
 		return false;
 	}
 
+	// Three of a kind: Three cards of the same value
 	private boolean isThree() {
 		int last = this.cards[4].getRank();
 		int total = 0, numberOfCards = 1;
@@ -184,6 +187,7 @@ public class Hand {
 		return false;
 	}
 
+	// Full house: Three of a kind and a Pair
 	private boolean isFullHouse() {
 		boolean checked = false;
 		int last = this.cards[4].getRank();
@@ -215,6 +219,7 @@ public class Hand {
 
 	}
 
+	// Four of a kind: Four cards of the same value
 	private boolean isFour() {
 
 		int last = this.cards[4].getRank();
@@ -239,6 +244,7 @@ public class Hand {
 		return false;
 	}
 
+	// All cards are from same suit
 	private boolean isAllSameSuit() {
 
 		char last = this.cards[0].getSuit();
@@ -255,6 +261,8 @@ public class Hand {
 		return true;
 	}
 
+	// // 9 Straight flush: All five cards in consecutive value order, with the same
+	// suit
 	private boolean isStraight() {
 
 		int last = this.cards[0].getRank();

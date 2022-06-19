@@ -53,6 +53,7 @@ public class GameMain {
 		}
 	}
 
+	// checking winner including tie
 	public static int pickWinner(Hand hand1, Hand hand2) {
 
 		if (hand1.getHandCategory().getRank() > hand2.getHandCategory().getRank()) {
@@ -64,7 +65,6 @@ public class GameMain {
 		} else if (hand1.getHandRank() < hand2.getHandRank()) {
 			return 2;
 		} else {
-			// final tie break!
 			for (int i = 4; i >= 0; i--) {
 				if (hand1.getCard(i).getRank() > hand2.getCard(i).getRank()) {
 					return 1;
@@ -72,7 +72,6 @@ public class GameMain {
 					return 2;
 				}
 			}
-			// theres a tie here...
 			return -1;
 		}
 
